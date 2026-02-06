@@ -6,6 +6,32 @@
     <title>时间表达练习</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <style>
+        /* Logo 容器样式 */
+.logo-wrapper {
+    display: flex;
+    justify-content: flex-start; /* 左对齐 */
+    margin-bottom: -20px; /* 减少与标题的间距 */
+}
+
+.site-logo {
+    height: 50px; /* 控制 Logo 大小 */
+    width: auto;
+    object-fit: contain;
+    /* 可选：给白色底的 Logo 加一点淡淡的阴影，让它在浅色背景上更有质感 */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+}
+
+/* 鼠标悬停动效：轻微放大 */
+.site-logo:hover {
+    transform: scale(1.05);
+}
+
+/* 适配移动端：Logo 居中 */
+@media (max-width: 768px) {
+    .logo-wrapper { justify-content: center; margin-bottom: 10px; }
+    .site-logo { height: 40px; }
+}
         body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7f6; display: flex; justify-content: center; padding: 20px; }
         .container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 100%; max-width: 850px; }
         h1 { text-align: center; color: #2c3e50; margin-bottom: 5px; }
@@ -53,6 +79,9 @@
 <body>
 
 <div class="container">
+    <div class="logo-wrapper">
+        <img src="logo.png" alt="AWAW STUDIOS" class="site-logo">
+    </div>
     <h1>⏰ 时间表达练习</h1>
     <div class="subtitle">
         键盘输入时间（如 <b>3:15</b>），完成后按 <b>Enter ↵</b> 进入下一题
@@ -213,3 +242,4 @@
 </body>
 
 </html>
+
