@@ -7,30 +7,38 @@
     <link rel="icon" href="favicon.png" type="image/png">
     <style>
         /* Logo 容器样式 */
+/* Logo 容器样式 */
 .logo-wrapper {
     display: flex;
-    justify-content: flex-start; /* 左对齐 */
-    margin-bottom: -20px; /* 减少与标题的间距 */
+    justify-content: flex-start; /* 保持左对齐 */
+    padding: 10px 0 20px 0;    /* 增加上下边距 */
 }
 
 .site-logo {
-    height: 50px; /* 控制 Logo 大小 */
-    width: auto;
-    object-fit: contain;
-    /* 可选：给白色底的 Logo 加一点淡淡的阴影，让它在浅色背景上更有质感 */
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-    transition: transform 0.3s ease;
+    height: 120px;            /* 将高度从 50px 显著放大到 120px */
+    width: auto;              /* 宽度自动比例缩放 */
+    object-fit: contain;      /* 确保图片不被拉伸 */
+    
+    /* 赛博感阴影：让 Logo 像发光一样 */
+    filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.4)); 
+    
+    transition: transform 0.3s ease; /* 增加平滑动画 */
+    cursor: pointer;
 }
 
-/* 鼠标悬停动效：轻微放大 */
 .site-logo:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);    /* 鼠标悬停时轻微放大 */
+    filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.6));
 }
 
-/* 适配移动端：Logo 居中 */
+/* 适配手机屏幕 */
 @media (max-width: 768px) {
-    .logo-wrapper { justify-content: center; margin-bottom: 10px; }
-    .site-logo { height: 40px; }
+    .logo-wrapper {
+        justify-content: center; /* 手机端居中 */
+    }
+    .site-logo {
+        height: 80px;           /* 手机端稍微改小一点点 */
+    }
 }
         body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7f6; display: flex; justify-content: center; padding: 20px; }
         .container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 100%; max-width: 850px; }
@@ -242,4 +250,5 @@
 </body>
 
 </html>
+
 
